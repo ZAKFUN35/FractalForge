@@ -9,7 +9,7 @@ bl_info = {
 }
 
 import bpy
-from . import properties, panels
+from . import properties, panels, cel_shading
 from .operators import clusters, unit, lod, butcher, autonormals
 
 
@@ -21,9 +21,11 @@ def register():
     butcher.register()
     autonormals.register()
     panels.register()
+    cel_shading.register()
 
 
 def unregister():
+    cel_shading.unregister()
     panels.unregister()
     autonormals.unregister()
     butcher.unregister()
